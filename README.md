@@ -39,7 +39,7 @@ docker run -d --name mypostgresqldbservice -p 54321:5432 mypostgresqldb -v <Abso
 ```
 ## Docker Compose
 
-In docker-compose version of running the postgresql we have 4 options. All these options are available in the docker-compose folder, in the root directory of the project.
+In docker-compose version of running the postgresql we have 3 options. All these options are available in the docker-compose folder, in the root directory of the project.
 
 * Option no. 1: ***WithoutAutoVolume***
 In this scenario, we are not creating the volume manualy in advance. Instead we have statement inside the docker-compose file
@@ -61,7 +61,11 @@ Pay attention to the line 19 and 20 in the docker-compose file. The service **pg
 In line 15 we also have an example of providing the init.sql script to the database, as it was in previous case. 
 
 * Option no. 2: ***WithSpecificVolume***
-This case is not that different from the Option no 1, the only change you will see in the docker-compose.yaml file in line 15 and 28. 
+This case is not that different from the Option no 1, the only change you will see is in the *docker-compose.yaml* file in line 15 and 28. We specify the exact path to the file system folder, where the docker container volume should be mounted, on the host machine (where docker engine is running).
+In this case no AutoCreated volumes are generated and we can easily copy or move the database related content.
+
+* Option no. 3: ***WithSecrets***
+
 
 ## Minikube
 
