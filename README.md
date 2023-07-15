@@ -8,10 +8,16 @@ In this repository you will find out instructions how to deploy the postgresql w
 
 ## Docker File
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+In the folder docker, you will find dockerfile, which pulls the latest postgres image from the [dockerhub](https://hub.docker.com/_/postgres) repository.
 
-```bash
-pip install foobar
+Dockerfile looks like this, it sets certain environmental variables that will be used to create the database with the name **devopscourse**, user **devopscourseuser** and the database password **devopscoursepassword**. It also copies the entrypoint sql script, the **init.sql**.
+
+```docker
+FROM postgres:latest
+ENV POSTGRES_DB devopscourse
+ENV POSTGRES_USER devopscourseuser
+ENV POSTGRES_PASSWORD devopscoursepassword
+COPY init.sql /docker-entrypoint-initdb.d/
 ```
 
 ## Docker Compose
