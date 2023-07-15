@@ -57,7 +57,7 @@ In this scenario, we are not creating the volume manualy in advance. Instead we 
     In line 15 we also have an example of providing the init.sql script to the database, as it was in previous case. 
 
 * Option no. 2: ***WithSpecificVolume***
-This case is not that different from the Option no 1, the only change you will see is in the *docker-compose.yaml* file in line 15 and 28. We specify the exact path to the file system folder, where the docker container volume should be mounted, on the host machine (where docker engine is running).
+This case is not that different from the Option no 1, the only change you will see is in the *docker-compose.yaml* file in line 14 and 28. We specify the exact path to the file system folder, where the docker container volume should be mounted, on the host machine (where docker engine is running).
 In this case no AutoCreated volumes are generated and we can easily copy or move the database related content.
 
 ## Minikube
