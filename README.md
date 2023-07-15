@@ -42,8 +42,7 @@ docker run -d --name mypostgresqldbservice -p 54321:5432 mypostgresqldb -v <Abso
 In docker-compose version of running the postgresql we have 3 options. All these options are available in the docker-compose folder, in the root directory of the project.
 
 * Option no. 1: ***WithoutAutoVolume***
-In this scenario, we are not creating the volume manualy in advance. Instead we have statement inside the docker-compose file
-```docker-compose
+In this scenario, we are not creating the volume manualy in advance. Instead we have statement inside the docker-compose file ```docker-compose
 volumes:
   pgdata:
     driver: local
