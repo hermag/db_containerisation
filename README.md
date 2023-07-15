@@ -42,18 +42,18 @@ docker run -d --name mypostgresqldbservice -p 54321:5432 mypostgresqldb -v <Abso
 In docker-compose version of running the postgresql we have 3 options. All these options are available in the docker-compose folder, in the root directory of the project.
 
 * Option no. 1: ***WithoutAutoVolume***
-In this scenario, we are not creating the volume manualy in advance. Instead we have statement inside the docker-compose file ```docker-compose
-volumes:
-  pgdata:
-    driver: local
-  pgadmindata:
-    driver: local
-```
-Which, indicates that once we will launch the containers, the corresponding volumes will be created automatically, and hence there will not be a data loss.
-These volumes **pgdata** and **pgadmindata** are referenced in the docker-compose file on lines 14 and 28, i.e. it is expected that these volumes will be created before starting the containers. 
-One more difference with the previous configuration is the **pgadmin** service, which is the web interface helping to connect and browse the postgresql database from the web. The service is launched on the port 8000 and we have hardcoded username and passwords for pgadmin as well as for the postgresql database.
-Pay attention to the line 19 and 20 in the docker-compose file. The service **pgadmin** will not start until the postgresql database is launched. The ***depend_on*** statement helps to do that.
-In line 15 we also have an example of providing the init.sql script to the database, as it was in previous case. 
+In this scenario, we are not creating the volume manualy in advance. Instead we have statement inside the docker-compose file 
+    ```docker-compose
+        volumes:
+            pgdata:
+                driver: local
+            pgadmindata:
+                driver: local
+    ``` Which, indicates that once we will launch the containers, the corresponding volumes will be created automatically, and hence there will not be a data loss.
+    These volumes **pgdata** and **pgadmindata** are referenced in the docker-compose file on lines 14 and 28, i.e. it is expected that these volumes will be created before starting the containers. 
+    One more difference with the previous configuration is the **pgadmin** service, which is the web interface helping to connect and browse the postgresql database from the web. The service is launched on the port 8000 and we have hardcoded username and passwords for pgadmin as well as for the postgresql database. 
+    Pay attention to the line 19 and 20 in the docker-compose file. The service **pgadmin** will not start until the postgresql database is launched. The ***depend_on*** statement helps to do that.
+    In line 15 we also have an example of providing the init.sql script to the database, as it was in previous case. 
 
 * Option no. 2: ***WithSpecificVolume***
 This case is not that different from the Option no 1, the only change you will see is in the *docker-compose.yaml* file in line 15 and 28. We specify the exact path to the file system folder, where the docker container volume should be mounted, on the host machine (where docker engine is running).
