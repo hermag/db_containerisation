@@ -10,7 +10,7 @@ In this repository you will find out instructions how to deploy the postgresql w
 
 In the folder docker, you will find dockerfile, which pulls the latest postgres image from the [dockerhub](https://hub.docker.com/_/postgres) repository.
 
-Dockerfile looks like this, it sets certain environmental variables that will be used to create the database with the name **devopscourse**, user **devopscourseuser** and the database password **devopscoursepassword**. It also copies the entrypoint sql script, the **init.sql**.
+Dockerfile looks like this, it sets certain environmental variables that will be used to create the database with the name **devopscourse**, user **devopscourseuser** and the database password **devopscoursepassword**. It also copies the entrypoint sql script, the **init.sql**, which creates the table *users* and defines two columns *name* and *email*.
 
 ```docker
 FROM postgres:latest
