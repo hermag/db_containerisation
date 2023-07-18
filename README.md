@@ -93,7 +93,7 @@ Afterwards we need to apply this file to the minikube cluster using the followin
 
 To list the created secrets we can run the following
 
-***kubectl list secrets*** this command will list the secrets in the default namespace.
+***kubectl get secrets*** this command will list the secrets in the default namespace.
 
 Also we can create the configmap, which is another way of passing the configuration to the database, it does not include any encrypted data, however it can contain initial scripts.
 
