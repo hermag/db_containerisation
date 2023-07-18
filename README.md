@@ -78,9 +78,14 @@ kubectl get pv,pvc,storageclass
 ```
 You should be able to see the ***postgres-pv*** and ***postgres-pvc***.
 
+The next step is to create the database secrets, i.e. username and password. For that we need to encode them using base64 encoding. IMPORTANT NOTE - this is not an encryption, NEVER RELY ON base64 encoding!
 
+To encode the username and password you need to execute the follwing commands
 
+***echo devopscourseuser | base64***
+***echo devopscoursepassword | base64***
 
+outputs should be saved in the ./minikube/postgres-secrets.yml file as a username and as a password.
 
 ## EKS
 
