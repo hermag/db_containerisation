@@ -11,4 +11,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/Users/erekle.magradze/CodeArea/containervolumes/minikubepv"
+    path: "/home/emagradze/CodeArea/containervolumes/minikubepv"

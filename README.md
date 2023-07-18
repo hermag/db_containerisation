@@ -62,10 +62,25 @@ In this case no AutoCreated volumes are generated and we can easily copy or move
 
 ## Minikube
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+In order to create the database deployment in the minikube, first we need to create the persistent volume, using the ./minikube/pv.yml file. Afterwards to make the persistent volume available for the deployment, we need to create the persistent volume claim. 
 
-Please make sure to update tests as appropriate.
+for creating the persistent volume and persistent volume claim, we can simply run the following commands:
+
+```shell
+kubectl apply -f minikube/pv.yml
+kubectl apply -f minikube/pvc.yml
+```
+
+In order to see the created persistent volume, persistent volume claim and other storage related details, we can run the following command:
+
+```shell
+kubectl get pv,pvc,storageclass
+```
+You should be able to see the ***postgres-pv*** and ***postgres-pvc***.
+
+
+
+
 
 ## EKS
 
