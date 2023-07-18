@@ -87,6 +87,11 @@ To encode the username and password you need to execute the follwing commands
 
 outputs should be saved in the ./minikube/postgres-secrets.yml file as a username and as a password.
 
+Afterwards we need to apply this file to the minikube cluster using the following command:
+
+***kubectl apply -f ./minikube/postgres-secrets.yml***
+
+
 ## EKS
 
 [MIT](https://choosealicense.com/licenses/mit/)
